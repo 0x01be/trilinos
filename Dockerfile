@@ -8,7 +8,7 @@ RUN apk add --no-cache --virtual build-dependencies \
     lapack-dev \
     boost-dev \
     libexecinfo-dev
-RUN apk add i--no-cache --virtual edge-build-dependencies --repository http://dl-cdn.alpinelinux.org/alpine/edge/testing \
+RUN apk add --no-cache --virtual edge-build-dependencies --repository http://dl-cdn.alpinelinux.org/alpine/edge/testing \
     netcdf-fortran-dev \
     openmpi-dev
 
