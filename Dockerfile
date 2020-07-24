@@ -3,12 +3,14 @@ FROM alpine:3.12.0 as builder
 RUN apk add --no-cache --virtual build-dependencies \
     git \
     build-base \
-    cmake
-
-RUN apk add    gfortran
-RUN apk add    lapack-dev
-RUN apk add    boost-dev
-RUN apk add --repository http://dl-cdn.alpinelinux.org/alpine/edge/testing   netcdf-fortran-dev
+    cmake \
+    gfortran \
+    lapack-dev \
+    boost-dev \
+    libexecinfo-dev
+RUN apk add i--no-cache --virtual edge-build-dependencies --repository http://dl-cdn.alpinelinux.org/alpine/edge/testing \
+    netcdf-fortran-dev \
+    openmpi-dev
 
 RUN git clone --depth 1 https://github.com/trilinos/Trilinos.git /trilinos
 
