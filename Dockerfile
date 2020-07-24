@@ -7,8 +7,10 @@ RUN apk add --no-cache --virtual build-dependencies \
     gfortran \
     lapack-dev \
     boost-dev \
-    libexecinfo-dev
+    libexecinfo-dev \
+    rust
 RUN apk add --no-cache --virtual edge-build-dependencies --repository http://dl-cdn.alpinelinux.org/alpine/edge/testing \
+    hdf5-dev \
     netcdf-fortran-dev \
     openmpi-dev
 
