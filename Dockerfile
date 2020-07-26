@@ -1,6 +1,9 @@
 FROM alpine:3.12.0 as builder
 
 RUN apk add --no-cache --virtual build-dependencies \
+    --repository http://dl-cdn.alpinelinux.org/alpine/edge/main \
+    --repository http://dl-cdn.alpinelinux.org/alpine/edge/community \
+    --repository http://dl-cdn.alpinelinux.org/alpine/edge/testing \
     git \
     build-base \
     cmake \
@@ -8,8 +11,6 @@ RUN apk add --no-cache --virtual build-dependencies \
     lapack-dev \
     boost-dev \
     libexecinfo-dev \
-    rust
-RUN apk add --no-cache --virtual edge-build-dependencies --repository http://dl-cdn.alpinelinux.org/alpine/edge/testing \
     hdf5-dev \
     netcdf-fortran-dev \
     openmpi-dev
